@@ -1,22 +1,44 @@
 'use client'
 
-import { Layout } from 'antd';
+import {
+    Layout
+} from 'antd';
 
-const { Header, Footer, Content } = Layout;
+const {
+    Content
+} = Layout;
+
+import Header from '@/src/components/Header';
+import Footer from '@/src/components/Footer'
 
 export default function DashboardLayout({ children }) {
 
     return (
 
-        <Layout style={{ height: '100%' }} >
+        <Layout style={styles.layout} >
 
-            <Header>Header</Header>
+            <Header />
 
-            <Content>{children}</Content>
+            <Content
+                style={styles.content}
+            >{children}</Content>
 
-            <Footer>Footer</Footer>
+            <Footer />
 
         </Layout>
 
     )
+}
+
+const styles = {
+    content: {
+        padding: 16,
+        marginTop: 38,
+        height: '100%',
+        background: 'white'
+    },
+    layout: {
+        height: '100%'
+    },
+
 }
